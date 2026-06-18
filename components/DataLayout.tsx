@@ -255,7 +255,14 @@ const DataLayout = ({ getUsers, label, useLakeBase, getOrders }: Props) => {
           <CardHeader>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <CardTitle>Benutzer auswählen</CardTitle>
+                <div className="flex items-center gap-2">
+                  <CardTitle>Benutzer auswählen</CardTitle>
+                  <Badge
+                    variant={useLakeBase ? "default" : "secondary"}
+                    className="rounded-full px-3 py-1 uppercase tracking-[0.24em]">
+                    {useLakeBase ? "Lakebase" : "Delta Lake"}
+                  </Badge>
+                </div>
                 <CardDescription>
                   Öffnet beim ersten Klick die Nutzerliste und lädt die
                   Datenquelle.
@@ -328,7 +335,14 @@ const DataLayout = ({ getUsers, label, useLakeBase, getOrders }: Props) => {
           <CardHeader>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <CardTitle>Bestellungen</CardTitle>
+                <div className="flex items-center gap-2">
+                  <CardTitle>Bestellungen</CardTitle>
+                  <Badge
+                    variant={useLakeBase ? "default" : "secondary"}
+                    className="rounded-full px-3 py-1 uppercase tracking-[0.24em]">
+                    {useLakeBase ? "Lakebase" : "Delta Lake"}
+                  </Badge>
+                </div>
                 <CardDescription>
                   Zeigt die Orders des gewählten Benutzers samt Status und
                   Detailzugriff.
@@ -388,7 +402,15 @@ const DataLayout = ({ getUsers, label, useLakeBase, getOrders }: Props) => {
           <CardHeader>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <CardTitle>Produktliste</CardTitle>
+                <div className="flex items-center gap-2">
+                  <CardTitle>Produktliste</CardTitle>
+
+                  <Badge
+                    variant={"secondary"}
+                    className="rounded-full px-3 py-1 uppercase tracking-[0.24em]">
+                    {"Delta Lake"}
+                  </Badge>
+                </div>
                 <CardDescription>
                   Produktdetails werden nach Auswahl einer Bestellung geladen.
                 </CardDescription>
